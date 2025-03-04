@@ -245,8 +245,6 @@ const EnvironmentConfigSchema = z.object({
    */
   enableUseTypeAnnotations: z.boolean().default(false),
 
-  enableFunctionDependencyRewrite: z.boolean().default(true),
-
   /**
    * Enables inference of optional dependency chains. Without this flag
    * a property chain such as `props?.items?.foo` will infer as a dep on
@@ -287,7 +285,7 @@ const EnvironmentConfigSchema = z.object({
       z.array(
         z.object({
           function: ExternalFunctionSchema,
-          numRequiredArgs: z.number(),
+          numRequiredArgs: z.number().min(1, 'numRequiredArgs must be > 0'),
         }),
       ),
     )

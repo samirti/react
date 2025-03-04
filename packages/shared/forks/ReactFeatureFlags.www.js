@@ -29,16 +29,15 @@ export const {
   enableSiblingPrerendering,
   enableTransitionTracing,
   enableTrustedTypesIntegration,
-  enableUseResourceEffectHook,
+  enableUseEffectCRUDOverload,
   favorSafetyOverHydrationPerf,
   renameElementSymbol,
   retryLaneExpirationMs,
   syncLaneExpirationMs,
   transitionLaneExpirationMs,
-  enableOwnerStacks,
-  enableRemoveConsolePatches,
   enableFastAddPropertiesInDiffing,
   enableViewTransition,
+  enableScrollEndPolyfill,
 } = dynamicFeatureFlags;
 
 // On WWW, __EXPERIMENTAL__ is used for a new modern build.
@@ -110,6 +109,10 @@ export const enableReactTestRendererWarning = false;
 export const disableLegacyMode = true;
 
 export const enableShallowPropDiffing = false;
+
+export const enableLazyPublicInstanceInFabric = false;
+
+export const enableSwipeTransition = false;
 
 // Flow magic to verify the exports of this file match the original version.
 ((((null: any): ExportsType): FeatureFlagsType): ExportsType);
